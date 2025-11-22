@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import avatarImage from "@assets/generated_images/futuristic_professional_developer_portrait.png";
+import avatarImage from "@assets/3d_developer_avatar_1763810827756.png";
 
 export default function About() {
   return (
