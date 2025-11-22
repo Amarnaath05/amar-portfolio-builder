@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import { useMemo } from "react";
 import * as THREE from "three";
-import characterImage from "@assets/3d_stylized_character_of_a_software_engineer-removebg-preview_1763831991124.png";
+import characterImage from "@assets/3d_stylized_character_of_a_software_engineer_1763815808967.png";
 
 function Character3DModel() {
   const texture = useTexture(characterImage);
