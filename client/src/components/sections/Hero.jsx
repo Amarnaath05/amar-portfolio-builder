@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Code2, Database, Brain } from "lucide-react";
+import { ArrowRight, Download, Code2, Database, Brain, Zap, Cpu, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import HeroScene from "@/components/3d/HeroScene";
+import characterImage from "@assets/generated_images/3d_stylized_software_engineer_character.png";
+
+const floatingIcons = [
+  { icon: Code2, label: "React", color: "text-cyan-400", delay: 0, duration: 6 },
+  { icon: Database, label: "Database", color: "text-green-400", delay: 0.5, duration: 7 },
+  { icon: Brain, label: "AI/ML", color: "text-purple-400", delay: 1, duration: 8 },
+  { icon: Zap, label: "Performance", color: "text-yellow-400", delay: 1.5, duration: 5.5 },
+  { icon: Cpu, label: "Backend", color: "text-blue-400", delay: 0.3, duration: 7.5 },
+  { icon: BarChart3, label: "Data", color: "text-pink-400", delay: 0.8, duration: 6.5 },
+];
 
 export default function Hero() {
   return (
@@ -76,25 +85,59 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden md:block h-[500px]"
+          className="relative hidden md:flex items-center justify-center h-[600px]"
         >
-          <HeroScene />
-          
-          <motion.div
-            animate={{ y: [0, 30, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-20 -right-10 bg-card/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl z-20"
-          >
-            <Database className="text-primary w-8 h-8" />
-          </motion.div>
+          {/* Character Image Container */}
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
+            
+            {/* Character Image */}
+            <img 
+              src={characterImage} 
+              alt="3D Software Engineer Character" 
+              className="relative z-10 h-full w-auto object-contain drop-shadow-2xl"
+            />
 
-          <motion.div
-            animate={{ y: [0, -30, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-20 -left-10 bg-card/80 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-xl z-20"
-          >
-            <Brain className="text-secondary w-8 h-8" />
-          </motion.div>
+            {/* Floating Tech Icons */}
+            {floatingIcons.map((item, index) => {
+              const Icon = item.icon;
+              const angle = (index / floatingIcons.length) * Math.PI * 2;
+              const radius = 160;
+              const x = Math.cos(angle) * radius;
+              const y = Math.sin(angle) * radius;
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: 1,
+                    y: [0, 30, 0],
+                    x: [0, Math.sin(angle) * 10, 0]
+                  }}
+                  transition={{
+                    opacity: { delay: item.delay + 0.5 },
+                    y: { duration: item.duration, repeat: Infinity, ease: "easeInOut", delay: item.delay },
+                    x: { duration: item.duration, repeat: Infinity, ease: "easeInOut", delay: item.delay }
+                  }}
+                  className="absolute"
+                  style={{
+                    left: `calc(50% + ${x}px)`,
+                    top: `calc(50% + ${y}px)`,
+                    transform: "translate(-50%, -50%)"
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.15 }}
+                    className={`p-4 bg-card/60 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg hover:border-primary/50 transition-all duration-300 group`}
+                  >
+                    <Icon className={`w-6 h-6 ${item.color} group-hover:scale-125 transition-transform`} />
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>
