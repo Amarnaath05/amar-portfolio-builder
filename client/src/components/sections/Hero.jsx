@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Code2, Database, Brain, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import characterImage from "@assets/generated_images/3d_stylized_software_engineer_character.png";
+import characterImage from "@assets/3d_stylized_character_of_a_software_engineer_1763815690797.png";
 
 export default function Hero() {
   return (
