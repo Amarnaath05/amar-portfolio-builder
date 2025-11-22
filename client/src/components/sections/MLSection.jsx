@@ -1,25 +1,32 @@
 import { motion } from "framer-motion";
-import { Bot, BarChart3, GitBranch, ExternalLink } from "lucide-react";
+import { Bot, BarChart3, GitBranch, ExternalLink, Github } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const mlProjects = [
   {
     title: "Google Reviews NLP Classifier",
     description: "Analyzes supermarket reviews to classify service quality dimensions (Tangibles, Reliability, Responsiveness). Implemented multi-label classification with high F1 scores.",
     metrics: ["Micro F1 Score", "Cohen's Kappa", "Subset Accuracy"],
-    tech: ["Python", "Scikit-learn", "NLTK", "TF-IDF", "Pandas"]
+    tech: ["Python", "Scikit-learn", "NLTK", "TF-IDF", "Pandas"],
+    githubLink: "https://github.com",
+    liveLink: "https://example.com"
   },
   {
     title: "Google Maps Supermarket Scraper",
     description: "Automated pipeline to scrape, clean, and structure data from Google Maps across multiple cities for downstream NLP analysis.",
     metrics: ["Data Cleaning", "Web Scraping", "Data Pipeline"],
-    tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"]
+    tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"],
+    githubLink: "https://github.com",
+    liveLink: "https://example.com"
   },
   {
     title: "Diabetes Prediction System",
     description: "Supervised machine learning pipeline to predict the likelihood of diabetes using patient health indicators, including data preprocessing, feature analysis, model training, and performance evaluation.",
     metrics: ["Classification", "Model Evaluation", "Medical Dataset Analysis", "Feature Engineering & Data Cleaning"],
-    tech: ["Python", "Jupyter Notebook", "Pandas", "Scikit-learn", "NumPy", "Matplotlib/Seaborn"]
+    tech: ["Python", "Jupyter Notebook", "Pandas", "Scikit-learn", "NumPy", "Matplotlib/Seaborn"],
+    githubLink: "https://github.com",
+    liveLink: "https://example.com"
   }
 ];
 
@@ -53,12 +60,12 @@ export default function MLSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="h-full bg-card/50 backdrop-blur-md border-primary/10 hover:border-primary/30 transition-all duration-300">
+              <Card className="h-full bg-card/50 backdrop-blur-md border-primary/10 hover:border-primary/30 transition-all duration-300 group">
                 <CardHeader className="flex flex-row items-start gap-4 pb-2">
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10">
                     {index === 0 ? <Bot className="w-8 h-8 text-emerald-400" /> : <BarChart3 className="w-8 h-8 text-blue-400" />}
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {project.tech.map((t, i) => (
@@ -67,6 +74,28 @@ export default function MLSection() {
                         </span>
                       ))}
                     </div>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors"
+                      asChild
+                    >
+                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4" />
+                      </a>
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-8 w-8 rounded-lg hover:bg-secondary/10 hover:text-secondary transition-colors"
+                      asChild
+                    >
+                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </Button>
                   </div>
                 </CardHeader>
                 <CardContent>
