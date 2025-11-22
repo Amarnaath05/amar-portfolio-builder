@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import metaLogo from "@assets/stock_images/meta_company_logo_ic_8870ea97.jpg";
+import hackerRankLogo from "@assets/stock_images/hackerrank_logo_icon_77e6c816.jpg";
+import ibmLogo from "@assets/stock_images/ibm_logo_icon_profes_be71a747.jpg";
 
 const certifications = [
   {
@@ -9,7 +12,7 @@ const certifications = [
     title: "Introduction to Front-End Development",
     issuer: "Meta",
     date: "2024",
-    logo: "🔵",
+    logo: metaLogo,
     verificationLink: "https://www.coursera.org/account/accomplishments/verify/META"
   },
   {
@@ -17,7 +20,7 @@ const certifications = [
     title: "Frontend Developer (React)",
     issuer: "HackerRank",
     date: "2025",
-    logo: "⬛",
+    logo: hackerRankLogo,
     verificationLink: "https://www.hackerrank.com/certificates/verify"
   },
   {
@@ -25,7 +28,7 @@ const certifications = [
     title: "Machine Learning with Python",
     issuer: "IBM – Cognitive Class",
     date: "2024",
-    logo: "🟦",
+    logo: ibmLogo,
     verificationLink: "https://cognitiveclass.ai/certificates"
   }
 ];
@@ -56,7 +59,11 @@ export default function Certifications() {
               <Card className="h-full bg-card/50 border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden">
                 <CardContent className="p-6 flex flex-col h-full gap-4">
                   <div className="flex items-start justify-between">
-                    <div className="text-5xl">{cert.logo}</div>
+                    <img 
+                      src={cert.logo} 
+                      alt={cert.issuer} 
+                      className="h-16 w-16 object-contain group-hover:scale-110 transition-transform"
+                    />
                     <span className="inline-flex items-center text-xs text-muted-foreground/70 bg-muted px-2 py-1 rounded-full">
                       <Calendar className="w-3 h-3 mr-1" />
                       {cert.date}
