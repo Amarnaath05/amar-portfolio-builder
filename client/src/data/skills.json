@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Frontend & UI",
+    "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "React Router", "Tailwind CSS", "Framer Motion"]
+  },
+  {
+    "category": "Backend & Databases",
+    "items": ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "MySQL"]
+  },
+  {
+    "category": "Machine Learning & NLP",
+    "items": ["Python", "Pandas", "NumPy", "Scikit-learn", "NLTK", "TF-IDF", "Transformers"]
+  },
+  {
+    "category": "Tools & DevOps",
+    "items": ["Git", "GitHub", "Docker", "Postman", "Vite", "VS Code", "MongoDB Atlas"]
+  }
+]

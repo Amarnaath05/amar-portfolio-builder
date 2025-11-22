@@ -23,9 +23,6 @@ export default function About() {
               I’m <strong className="text-foreground">Amarnaath</strong>, a MERN Stack Developer and Machine Learning enthusiast from Coimbatore. I enjoy building complete solutions: frontend interfaces that feel smooth and intuitive, backend APIs that are clean and secure, and ML pipelines that turn unstructured data into actionable insights.
             </p>
             <p>
-              In my projects, I’ve worked on a freelance marketplace platform, a book store web app, and multiple NLP-based systems analyzing Google Reviews and service quality. I like breaking complex problems into smaller parts, experimenting, and continuously improving my code and models.
-            </p>
-            <p>
               When I’m not coding, I’m usually exploring new tools, reading about system design and ML best practices, or refining my existing projects to make them more production-ready.
             </p>
           </div>

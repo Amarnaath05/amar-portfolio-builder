@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import { Bot, BarChart3, GitBranch } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { MLProject } from "@/types";
 
-const mlProjects = [
+const mlProjects: MLProject[] = [
   {
     title: "Google Reviews NLP Classifier",
-    icon: <Bot className="w-8 h-8 text-emerald-400" />,
     description: "Analyzes supermarket reviews to classify service quality dimensions (Tangibles, Reliability, Responsiveness). Implemented multi-label classification with high F1 scores.",
     metrics: ["Micro F1 Score", "Cohen’s Kappa", "Subset Accuracy"],
     tech: ["Python", "Scikit-learn", "NLTK", "TF-IDF", "Pandas"]
   },
   {
     title: "Google Maps Supermarket Scraper",
-    icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
     description: "Automated pipeline to scrape, clean, and structure data from Google Maps across multiple cities for downstream NLP analysis.",
     metrics: ["Data Cleaning", "Web Scraping", "Data Pipeline"],
     tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"]
@@ -48,7 +47,7 @@ export default function MLSection() {
               <Card className="h-full bg-card/50 backdrop-blur-md border-primary/10 hover:border-primary/30 transition-all duration-300">
                 <CardHeader className="flex flex-row items-start gap-4 pb-2">
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10">
-                    {project.icon}
+                    {index === 0 ? <Bot className="w-8 h-8 text-emerald-400" /> : <BarChart3 className="w-8 h-8 text-blue-400" />}
                   </div>
                   <div>
                     <CardTitle className="text-xl font-bold">{project.title}</CardTitle>

@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "Education", href: "#education" },
+  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "ML & NLP", href: "#ml-nlp" },
-  { name: "Certifications", href: "#certifications" },
-  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -22,7 +21,7 @@ export default function Navbar() {
     setIsScrolled(latest > 50);
   });
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href: string) => {
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
@@ -61,15 +60,19 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button 
+            className="text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Overlay */}

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Code2, Database, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@assets/generated_images/3d_tech_hero_illustration.png";
+import HeroScene from "@/components/3d/HeroScene";
 
 export default function Hero() {
   return (
@@ -37,7 +37,7 @@ export default function Hero() {
           </div>
 
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-            I build end-to-end web applications using the MERN stack and apply machine learning and NLP to turn raw data into insights. I enjoy solving real-world problems, from scalable web platforms to intelligent review analysis.
+            I build end-to-end web applications using the MERN stack and apply machine learning and NLP to turn raw data into insights.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -77,27 +77,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden md:block"
+          className="relative hidden md:block h-[500px]"
         >
-          <motion.div
-            animate={{ 
-              y: [0, -20, 0],
-              rotate: [0, 2, 0]
-            }}
-            transition={{ 
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="relative z-10"
-          >
-            <img 
-              src={heroImage} 
-              alt="3D Tech Illustration" 
-              className="w-full h-auto drop-shadow-2xl"
-            />
-          </motion.div>
-
+          <HeroScene />
+          
           {/* Floating cards effect */}
           <motion.div
             animate={{ y: [0, 30, 0] }}

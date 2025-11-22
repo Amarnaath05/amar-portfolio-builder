@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Freelance Marketplace",
+    "description": "A full-stack platform where clients post jobs and freelancers bid. Features role-based dashboards, JWT auth, and project management tools.",
+    "techStack": ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "placeholder"
+  },
+  {
+    "id": "2",
+    "title": "React Vite Book Store",
+    "description": "Modern book store app with library management features. Users can browse, search, and view detailed book information.",
+    "techStack": ["React", "Vite", "Node.js", "MongoDB", "REST API"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "placeholder"
+  },
+  {
+    "id": "3",
+    "title": "Weather Dashboard",
+    "description": "Responsive weather application providing real-time forecasts and city-based search using external Weather APIs.",
+    "techStack": ["HTML5", "CSS3", "JavaScript", "OpenWeather API"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "placeholder"
+  },
+  {
+    "id": "4",
+    "title": "Personal Portfolio v1",
+    "description": "Previous iteration of my personal website focusing on clean UI and smooth scroll interactions.",
+    "techStack": ["React", "CSS Modules", "EmailJS", "Framer Motion"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "placeholder"
+  }
+]

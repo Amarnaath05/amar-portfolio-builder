@@ -1,36 +1,13 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink, FolderGit2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-
-const projects = [
-  {
-    title: "Freelance Marketplace",
-    description: "A full-stack platform where clients post jobs and freelancers bid. Features role-based dashboards, JWT auth, and project management tools.",
-    tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-    links: { code: "#", demo: "#" }
-  },
-  {
-    title: "React Vite Book Store",
-    description: "Modern book store app with library management features. Users can browse, search, and view detailed book information.",
-    tags: ["React", "Vite", "Node.js", "MongoDB", "REST API"],
-    links: { code: "#", demo: "#" }
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Responsive weather application providing real-time forecasts and city-based search using external Weather APIs.",
-    tags: ["HTML5", "CSS3", "JavaScript", "OpenWeather API"],
-    links: { code: "#", demo: "#" }
-  },
-  {
-    title: "Personal Portfolio v1",
-    description: "Previous iteration of my personal website focusing on clean UI and smooth scroll interactions.",
-    tags: ["React", "CSS Modules", "EmailJS", "Framer Motion"],
-    links: { code: "#", demo: "#" }
-  }
-];
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import projectsData from "@/data/projects.json";
+import { Project } from "@/types";
 
 export default function Projects() {
+  const projects: Project[] = projectsData as Project[];
+
   return (
     <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
@@ -52,7 +29,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -65,11 +42,15 @@ export default function Projects() {
                       <FolderGit2 size={24} />
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 hover:bg-primary/10 hover:text-primary">
-                        <Github size={16} />
+                      <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 hover:bg-primary/10 hover:text-primary" asChild>
+                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                          <Github size={16} />
+                        </a>
                       </Button>
-                      <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 hover:bg-primary/10 hover:text-primary">
-                        <ExternalLink size={16} />
+                      <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 hover:bg-primary/10 hover:text-primary" asChild>
+                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink size={16} />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -78,7 +59,7 @@ export default function Projects() {
                 </CardHeader>
                 <CardContent className="mt-auto">
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tags.map((tag, i) => (
+                    {project.techStack.map((tag, i) => (
                       <span key={i} className="px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary text-xs font-medium">
                         {tag}
                       </span>

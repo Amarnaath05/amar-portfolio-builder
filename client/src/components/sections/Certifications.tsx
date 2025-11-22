@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 import { Award, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Certification } from "@/types";
 
-const certifications = [
+const certifications: Certification[] = [
   {
+    id: "1",
     title: "Front-End Development Course",
     issuer: "Udemy",
-    date: "2024",
-    id: "credential-id-1"
+    date: "2024"
   },
   {
+    id: "2",
     title: "Machine Learning & Data Science Bootcamp",
     issuer: "Coursera",
-    date: "2023",
-    id: "credential-id-2"
+    date: "2023"
   },
   {
+    id: "3",
     title: "Hackathon Participation: Smart India Hackathon",
     issuer: "Government of India",
-    date: "2023",
-    id: "credential-id-3"
+    date: "2023"
   }
 ];
 
@@ -40,7 +41,7 @@ export default function Certifications() {
         <div className="max-w-4xl mx-auto grid gap-6">
           {certifications.map((cert, index) => (
             <motion.div
-              key={index}
+              key={cert.id}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}

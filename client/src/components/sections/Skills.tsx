@@ -1,30 +1,18 @@
 import { motion } from "framer-motion";
 import { Code2, Server, Brain, Wrench } from "lucide-react";
+import skillsData from "@/data/skills.json";
+import { SkillCategory } from "@/types";
 
-const skills = [
-  {
-    category: "Frontend & UI",
-    icon: <Code2 className="w-6 h-6 text-primary" />,
-    items: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "React Router", "Tailwind CSS", "Responsive Design"]
-  },
-  {
-    category: "Backend & Databases",
-    icon: <Server className="w-6 h-6 text-secondary" />,
-    items: ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "MySQL basics"]
-  },
-  {
-    category: "Machine Learning & NLP",
-    icon: <Brain className="w-6 h-6 text-rose-400" />,
-    items: ["Python", "Pandas", "NumPy", "Scikit-learn", "NLP", "TF-IDF", "Transformers (Basics)"]
-  },
-  {
-    category: "Tools & Version Control",
-    icon: <Wrench className="w-6 h-6 text-amber-400" />,
-    items: ["Git", "GitHub", "Postman", "VS Code", "Vite", "Framer Motion"]
-  }
-];
+const icons = {
+  "Frontend & UI": <Code2 className="w-6 h-6 text-primary" />,
+  "Backend & Databases": <Server className="w-6 h-6 text-secondary" />,
+  "Machine Learning & NLP": <Brain className="w-6 h-6 text-rose-400" />,
+  "Tools & DevOps": <Wrench className="w-6 h-6 text-amber-400" />
+};
 
 export default function Skills() {
+  const skills: SkillCategory[] = skillsData as SkillCategory[];
+
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -50,7 +38,7 @@ export default function Skills() {
               className="bg-card/40 backdrop-blur-md border border-white/5 rounded-xl p-6 hover:bg-card/60 hover:border-primary/30 transition-all duration-300 group"
             >
               <div className="bg-white/5 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                {skill.icon}
+                {icons[skill.category as keyof typeof icons] || <Code2 />}
               </div>
               <h3 className="text-xl font-bold mb-4 font-display">{skill.category}</h3>
               <div className="flex flex-wrap gap-2">
