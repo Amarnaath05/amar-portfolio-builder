@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Code2, Database, Brain, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import characterImage from "@assets/3d_stylized_character_of_a_software_engineer_1763815690797.png";
+import Character3D from "@/components/3d/Character3D";
 
 export default function Hero() {
   return (
@@ -73,21 +73,15 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Side - Character with Floating Icons */}
+        {/* Right Side - 3D Character with Floating Icons */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative hidden md:block h-[600px]"
         >
-          {/* Character Image */}
-          <div className="relative w-full h-full flex items-center justify-center">
-            <img 
-              src={characterImage} 
-              alt="3D Software Engineer Character" 
-              className="h-full w-auto object-contain drop-shadow-2xl"
-            />
-          </div>
+          {/* 3D Character Canvas */}
+          <Character3D />
 
           {/* Top Left - React Icon */}
           <motion.div
