@@ -53,12 +53,12 @@ export default function MLSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <Card className="h-full bg-card/50 backdrop-blur-md border-primary/10 hover:border-primary/30 transition-all duration-300 group">
-                <CardHeader className="flex flex-row items-start gap-4 pb-2 relative">
+              <Card className="h-full bg-card/50 backdrop-blur-md border-primary/10 hover:border-primary/30 transition-all duration-300">
+                <CardHeader className="flex flex-row items-start gap-4 pb-2">
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10">
                     {index === 0 ? <Bot className="w-8 h-8 text-emerald-400" /> : <BarChart3 className="w-8 h-8 text-blue-400" />}
                   </div>
-                  <div className="flex-1">
+                  <div>
                     <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {project.tech.map((t, i) => (
@@ -66,14 +66,6 @@ export default function MLSection() {
                           {t}
                         </span>
                       ))}
-                    </div>
-                  </div>
-                  <div className="flex gap-2 absolute top-4 right-4">
-                    <div className="p-2 bg-white/5 rounded-lg border border-white/10 group-hover:border-primary/30 transition-colors">
-                      <Bot className="w-4 h-4 text-primary" />
-                    </div>
-                    <div className="p-2 bg-white/5 rounded-lg border border-white/10 group-hover:border-secondary/30 transition-colors">
-                      <ExternalLink className="w-4 h-4 text-secondary" />
                     </div>
                   </div>
                 </CardHeader>
