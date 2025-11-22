@@ -96,6 +96,8 @@ export default function Character3D() {
 
       {/* Model */}
       <Character3DModel />
+      
+      {/* No background/fog - keep transparent */}
     </Canvas>
   );
 }
