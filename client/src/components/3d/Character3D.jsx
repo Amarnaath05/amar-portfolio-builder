@@ -1,37 +1,77 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float } from "@react-three/drei";
+import { useTexture, Float, OrbitControls } from "@react-three/drei";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 import characterImage from "@assets/3d_stylized_character_of_a_software_engineer_1763815808967.png";
 
-function CharacterModel() {
+function Character3DModel() {
   const groupRef = useRef(null);
-  const textureLoader = useMemo(() => new THREE.TextureLoader(), []);
-  const texture = useMemo(() => textureLoader.load(characterImage), [textureLoader]);
+  const texture = useTexture(characterImage);
+  
+  useMemo(() => {
+    if (texture) {
+      texture.magFilter = THREE.LinearFilter;
+      texture.minFilter = THREE.LinearFilter;
+    }
+  }, [texture]);
 
   useFrame(({ clock }) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.5) * 0.3;
-      groupRef.current.rotation.x = Math.sin(clock.getElapsedTime() * 0.3) * 0.15;
+      // Gentle rotation on Y axis
+      groupRef.current.rotation.y += 0.005;
+      // Subtle floating motion
       groupRef.current.position.y = Math.sin(clock.getElapsedTime() * 0.8) * 0.3;
     }
   });
 
   return (
     <Float
-      speed={2}
-      rotationIntensity={0.3}
-      floatIntensity={1.5}
-      floatingRange={[-0.3, 0.3]}
+      speed={1}
+      rotationIntensity={0.2}
+      floatIntensity={1}
+      floatingRange={[-0.2, 0.2]}
     >
-      <group ref={groupRef}>
-        <mesh scale={[3, 4, 0.1]} position={[0, 0, 0]}>
-          <planeGeometry args={[1, 1]} />
+      <group ref={groupRef} scale={[3, 4, 0.5]}>
+        {/* Main character mesh */}
+        <mesh castShadow receiveShadow>
+          <boxGeometry args={[1, 1, 0.2]} />
           <meshStandardMaterial
             map={texture}
             transparent={true}
             side={THREE.DoubleSide}
-            toneMapped={false}
+            metalness={0.1}
+            roughness={0.4}
+          />
+        </mesh>
+
+        {/* Back face for depth */}
+        <mesh position={[0, 0, -0.15]}>
+          <boxGeometry args={[1, 1, 0.1]} />
+          <meshStandardMaterial
+            color="#0a1628"
+            transparent={true}
+            opacity={0.3}
+          />
+        </mesh>
+
+        {/* Edge lighting for depth */}
+        <mesh position={[0.5, 0, -0.1]} scale={[0.1, 1, 0.4]}>
+          <boxGeometry />
+          <meshStandardMaterial
+            emissive="#00ffff"
+            emissiveIntensity={0.3}
+            transparent={true}
+            opacity={0.2}
+          />
+        </mesh>
+
+        <mesh position={[-0.5, 0, -0.1]} scale={[0.1, 1, 0.4]}>
+          <boxGeometry />
+          <meshStandardMaterial
+            emissive="#ff00ff"
+            emissiveIntensity={0.3}
+            transparent={true}
+            opacity={0.2}
           />
         </mesh>
       </group>
@@ -42,14 +82,39 @@ function CharacterModel() {
 export default function Character3D() {
   return (
     <Canvas
-      camera={{ position: [0, 0, 5], fov: 45 }}
+      camera={{ position: [0, 0, 6], fov: 45 }}
       style={{ width: "100%", height: "100%", background: "transparent" }}
-      gl={{ alpha: true, antialias: true }}
+      gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
     >
-      <ambientLight intensity={1} />
-      <directionalLight position={[5, 5, 5]} intensity={1.2} />
-      <directionalLight position={[-5, -5, 5]} intensity={0.8} color="#00ffff" />
-      <CharacterModel />
+      {/* Lighting */}
+      <ambientLight intensity={0.8} />
+      <directionalLight 
+        position={[5, 5, 5]} 
+        intensity={1.2} 
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+      />
+      <directionalLight 
+        position={[-5, -5, 5]} 
+        intensity={0.8} 
+        color="#00ffff" 
+      />
+      <directionalLight 
+        position={[5, -5, -5]} 
+        intensity={0.6} 
+        color="#ff00ff" 
+      />
+      
+      {/* Environment glow */}
+      <pointLight position={[0, 0, 3]} intensity={0.5} color="#00ffff" />
+      <pointLight position={[0, 0, -3]} intensity={0.5} color="#ff00ff" />
+
+      {/* Model */}
+      <Character3DModel />
+
+      {/* Disable orbit controls for automatic rotation */}
+      {/* <OrbitControls autoRotate autoRotateSpeed={3} /> */}
     </Canvas>
   );
 }
