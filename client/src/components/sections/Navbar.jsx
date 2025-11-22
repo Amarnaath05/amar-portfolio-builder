@@ -45,26 +45,29 @@ export default function Navbar() {
           className="flex items-center justify-center w-10 h-10 hover:scale-110 transition-transform duration-300"
           title="Amarnaath Portfolio"
         >
-          <svg className="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-10 h-10" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="aBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#0ea5e9" />
-                <stop offset="100%" stopColor="#0284c7" />
+              <linearGradient id="aGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#00d4ff" />
+                <stop offset="50%" stopColor="#0099ff" />
+                <stop offset="100%" stopColor="#6633ff" />
               </linearGradient>
+              <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+              </filter>
             </defs>
             
-            {/* Triangular "A" - Left diagonal */}
-            <line x1="32" y1="72" x2="50" y2="20" stroke="url(#aBlueGradient)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+            {/* Main "A" filled triangle */}
+            <path d="M 60 15 L 25 95 L 95 95 Z" fill="url(#aGradient)" filter="url(#shadow)"/>
             
-            {/* Right diagonal */}
-            <line x1="50" y1="20" x2="68" y2="72" stroke="url(#aBlueGradient)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+            {/* Inner cutout for crossbar effect */}
+            <path d="M 40 70 L 80 70 L 75 80 L 45 80 Z" fill="white" opacity="0.95"/>
             
-            {/* Horizontal crossbar */}
-            <line x1="38" y1="54" x2="62" y2="54" stroke="url(#aBlueGradient)" strokeWidth="3.5" strokeLinecap="round"/>
+            {/* Highlight accent on top */}
+            <ellipse cx="60" cy="35" rx="12" ry="8" fill="white" opacity="0.4"/>
             
-            {/* Orbital ring - smooth curved path */}
-            <path d="M 20 50 Q 15 35 25 25 Q 45 10 70 20 Q 80 25 82 45 Q 83 65 70 80 Q 50 95 35 85 Q 18 75 20 50" 
-                  stroke="url(#aBlueGradient)" strokeWidth="3.5" fill="none" strokeLinecap="round"/>
+            {/* Premium border accent */}
+            <path d="M 25 95 L 95 95" stroke="url(#aGradient)" strokeWidth="2" opacity="0.6" strokeLinecap="round"/>
           </svg>
         </a>
 
