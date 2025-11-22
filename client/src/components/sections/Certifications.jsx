@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import metaLogo from "@assets/stock_images/meta_company_logo_ic_8870ea97.jpg";
-import hackerRankLogo from "@assets/stock_images/hackerrank_logo_icon_77e6c816.jpg";
-import ibmLogo from "@assets/stock_images/ibm_logo_icon_profes_be71a747.jpg";
+import metaLogo from "@assets/image_1763813755354.png";
+import hackerRankLogo from "@assets/image_1763813799198.png";
+import ibmLogo from "@assets/image_1763813828440.png";
 
 const certifications = [
   {
@@ -62,7 +62,7 @@ export default function Certifications() {
                     <img 
                       src={cert.logo} 
                       alt={cert.issuer} 
-                      className="h-16 w-16 object-contain group-hover:scale-110 transition-transform"
+                      className="h-16 w-auto object-contain group-hover:scale-110 transition-transform"
                     />
                     <span className="inline-flex items-center text-xs text-muted-foreground/70 bg-muted px-2 py-1 rounded-full">
                       <Calendar className="w-3 h-3 mr-1" />
