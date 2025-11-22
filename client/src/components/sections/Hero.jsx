@@ -94,7 +94,7 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute -left-12 top-12 z-20"
+            className="absolute -left-6 top-12 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-lg hover:border-cyan-500/60 transition-all">
               <Code2 className="w-8 h-8 text-cyan-400" />
@@ -113,7 +113,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 0.5
             }}
-            className="absolute -right-12 top-20 z-20"
+            className="absolute -right-6 top-20 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-lg hover:border-green-500/60 transition-all">
               <Zap className="w-8 h-8 text-green-400" />
@@ -132,7 +132,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 1
             }}
-            className="absolute -left-12 top-1/2 transform -translate-y-1/2 z-20"
+            className="absolute -left-6 top-1/2 transform -translate-y-1/2 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-lg hover:border-green-500/60 transition-all">
               <Database className="w-8 h-8 text-green-400" />
@@ -151,7 +151,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 1.5
             }}
-            className="absolute -left-8 bottom-16 z-20"
+            className="absolute -left-4 bottom-16 z-20"
           >
             <div className="p-3 bg-background/60 backdrop-blur-xl border border-cyan-500/30 rounded-full shadow-lg hover:border-cyan-500/60 transition-all">
               <div className="w-6 h-6 rounded-full border-2 border-cyan-400" />
@@ -170,7 +170,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 0.3
             }}
-            className="absolute -right-12 bottom-20 z-20"
+            className="absolute -right-6 bottom-20 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl shadow-lg hover:border-purple-500/60 transition-all">
               <Brain className="w-8 h-8 text-purple-400" />
