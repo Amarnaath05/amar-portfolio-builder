@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Code2, Database, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import HeroScene from "@/components/3d/HeroScene";
+import profileImage from "@assets/Untitled design_1763809670464.png";
 
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-3xl" />
@@ -26,7 +25,7 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="text-primary font-mono text-lg"
             >
-              Hi, I’m Amarnaath.
+              Hi, I'm Amarnaath.
             </motion.p>
             <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight">
               MERN Stack <br />
@@ -77,11 +76,17 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden md:block h-[500px]"
+          className="relative hidden md:flex items-center justify-center"
         >
-          <HeroScene />
+          <div className="relative w-full max-w-sm">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-2xl opacity-75" />
+            <img 
+              src={profileImage}
+              alt="Amarnaath Profile" 
+              className="relative z-10 w-full h-auto rounded-3xl shadow-2xl border border-primary/20"
+            />
+          </div>
           
-          {/* Floating cards effect */}
           <motion.div
             animate={{ y: [0, 30, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
