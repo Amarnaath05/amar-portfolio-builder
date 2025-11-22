@@ -1,11 +1,10 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { useTexture, Sphere } from "@react-three/drei";
-import { useRef, useMemo } from "react";
+import { useMemo } from "react";
 import * as THREE from "three";
 import characterImage from "@assets/3d_stylized_character_of_a_software_engineer_1763815808967.png";
 
 function Character3DModel() {
-  const groupRef = useRef(null);
   const texture = useTexture(characterImage);
   
   useMemo(() => {
@@ -15,14 +14,8 @@ function Character3DModel() {
     }
   }, [texture]);
 
-  useFrame(({ clock }) => {
-    if (groupRef.current) {
-      groupRef.current.position.y = Math.sin(clock.getElapsedTime() * 0.5) * 0.2;
-    }
-  });
-
   return (
-    <group ref={groupRef} scale={[2.8, 3.8, 1.2]}>
+    <group scale={[2.8, 3.8, 1.2]}>
       {/* Main character front face */}
       <mesh castShadow receiveShadow position={[0, 0, 0.3]}>
         <planeGeometry args={[1, 1]} />
