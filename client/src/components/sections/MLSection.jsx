@@ -9,7 +9,7 @@ const mlProjects = [
     description: "Analyzes supermarket reviews to classify service quality dimensions (Tangibles, Reliability, Responsiveness). Implemented multi-label classification with high F1 scores.",
     metrics: ["Micro F1 Score", "Cohen's Kappa", "Subset Accuracy"],
     tech: ["Python", "Scikit-learn", "NLTK", "TF-IDF", "Pandas"],
-    githubLink: "https://github.com",
+    githubLink: "https://github.com/Amarnaath05/ServiceQuality-NLP.git",
     liveLink: "https://example.com"
   },
   {
@@ -17,7 +17,7 @@ const mlProjects = [
     description: "Automated pipeline to scrape, clean, and structure data from Google Maps across multiple cities for downstream NLP analysis.",
     metrics: ["Data Cleaning", "Web Scraping", "Data Pipeline"],
     tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"],
-    githubLink: "https://github.com",
+    githubLink: "https://github.com/Amarnaath05/nlp-google-reviews.git",
     liveLink: "https://example.com"
   },
   {
@@ -25,7 +25,7 @@ const mlProjects = [
     description: "Supervised machine learning pipeline to predict the likelihood of diabetes using patient health indicators, including data preprocessing, feature analysis, model training, and performance evaluation.",
     metrics: ["Classification", "Model Evaluation", "Medical Dataset Analysis", "Feature Engineering & Data Cleaning"],
     tech: ["Python", "Jupyter Notebook", "Pandas", "Scikit-learn", "NumPy", "Matplotlib/Seaborn"],
-    githubLink: "https://github.com",
+    githubLink: "https://github.com/Amarnaath05/Diabetes-Prediction-System.git",
     liveLink: "https://example.com"
   }
 ];
