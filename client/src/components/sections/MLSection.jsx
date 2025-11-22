@@ -31,30 +31,14 @@ export default function MLSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 relative"
+          className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm tracking-wider uppercase mb-2 block">Data Science & AI</span>
-          
-          <div className="relative inline-block">
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">ML & NLP Projects</h2>
-            
-            {/* Decorative Icons */}
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-16 top-0 opacity-60"
-            >
-              <div className="flex gap-2">
-                <div className="p-3 bg-primary/10 border border-primary/20 rounded-lg">
-                  <Bot className="w-5 h-5 text-primary" />
-                </div>
-                <div className="p-3 bg-secondary/10 border border-secondary/20 rounded-lg">
-                  <ExternalLink className="w-5 h-5 text-secondary" />
-                </div>
-              </div>
-            </motion.div>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Bot className="w-6 h-6 text-primary" />
+            <h2 className="text-3xl md:text-4xl font-bold font-display">ML & NLP Projects</h2>
+            <ExternalLink className="w-6 h-6 text-secondary" />
           </div>
-          
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Applying machine learning algorithms and natural language processing to derive meaningful insights from unstructured data.
           </p>
