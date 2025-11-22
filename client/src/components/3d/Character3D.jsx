@@ -67,8 +67,8 @@ export default function Character3D() {
   return (
     <Canvas
       camera={{ position: [0, 0, 6], fov: 45 }}
-      style={{ width: "100%", height: "100%", background: "transparent" }}
-      gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
+      style={{ width: "100%", height: "100%" }}
+      gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true, clearColor: 0x000000, clearAlpha: 0 }}
     >
       {/* Lighting */}
       <ambientLight intensity={0.8} />
