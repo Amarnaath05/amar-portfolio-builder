@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useTexture, OrbitControls, Environment, PerspectiveCamera, Text, Plane } from "@react-three/drei";
+import { useTexture, Environment, PerspectiveCamera } from "@react-three/drei";
 import { useRef, useMemo } from "react";
 import * as THREE from "three";
 import characterImage from "@assets/3d_stylized_character_of_a_software_engineer_1763815808967.png";
@@ -188,18 +188,18 @@ function Particles() {
   );
 }
 
-export default function Character3D() {
-  const cameraRef = useRef(null);
-
+function CameraController() {
   useFrame(({ camera, clock }) => {
-    if (cameraRef.current) {
-      const time = clock.getElapsedTime() * 0.3;
-      camera.position.x = Math.sin(time) * 3;
-      camera.position.z = 6 + Math.cos(time) * 1;
-      camera.lookAt(0, 0, 0);
-    }
+    const time = clock.getElapsedTime() * 0.3;
+    camera.position.x = Math.sin(time) * 3;
+    camera.position.z = 6 + Math.cos(time) * 1;
+    camera.lookAt(0, 0, 0);
   });
 
+  return null;
+}
+
+export default function Character3D() {
   return (
     <Canvas
       camera={{ position: [3, 0, 6], fov: 45 }}
@@ -211,7 +211,8 @@ export default function Character3D() {
         toneMappingExposure: 1.2,
       }}
     >
-      <PerspectiveCamera ref={cameraRef} makeDefault position={[3, 0, 6]} fov={45} />
+      <PerspectiveCamera makeDefault position={[3, 0, 6]} fov={45} />
+      <CameraController />
 
       {/* Lighting Setup */}
       <ambientLight intensity={0.5} color="#ffffff" />
