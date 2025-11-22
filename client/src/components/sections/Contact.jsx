@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 const contactSchema = z.object({
@@ -16,11 +16,9 @@ const contactSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
-type ContactFormValues = z.infer<typeof contactSchema>;
-
 export default function Contact() {
   const { toast } = useToast();
-  const form = useForm<ContactFormValues>({
+  const form = useForm({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
@@ -29,7 +27,7 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data: ContactFormValues) => {
+  const onSubmit = (data) => {
     console.log(data);
     toast({
       title: "Message Sent!",

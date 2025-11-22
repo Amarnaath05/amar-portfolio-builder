@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -23,7 +22,7 @@ export default function Navbar() {
     setIsScrolled(latest > 50);
   });
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href) => {
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
