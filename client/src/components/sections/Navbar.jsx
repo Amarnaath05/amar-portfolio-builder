@@ -42,23 +42,45 @@ export default function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
-          className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+          className="flex items-center justify-center w-10 h-10 hover:scale-110 transition-transform duration-300"
           title="Amarnaath Portfolio"
         >
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="aGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#00ffff', stopOpacity: 1}} />
-                <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+              <linearGradient id="aGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 1}} />
+                <stop offset="50%" style={{stopColor: '#f59e0b', stopOpacity: 1}} />
+                <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 1}} />
               </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
             </defs>
-            {/* Modern geometric A */}
-            <path 
-              d="M12 2 L2 22 H6.5 L8.5 17 H15.5 L17.5 22 H22 L12 2 Z M9.5 13 L12 6.5 L14.5 13 H9.5 Z" 
-              fill="url(#aGradient)" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            />
+            
+            {/* Outer circular ring */}
+            <circle cx="50" cy="50" r="46" stroke="url(#aGoldGradient)" strokeWidth="2.5" fill="none" filter="url(#glow)"/>
+            
+            {/* Inner decorative circle */}
+            <circle cx="50" cy="50" r="42" stroke="url(#aGoldGradient)" strokeWidth="0.8" fill="none" opacity="0.4"/>
+            
+            {/* Elegant "A" letter */}
+            <g filter="url(#glow)">
+              {/* Left diagonal */}
+              <line x1="35" y1="65" x2="50" y2="25" stroke="url(#aGoldGradient)" strokeWidth="3" strokeLinecap="round"/>
+              
+              {/* Right diagonal */}
+              <line x1="50" y1="25" x2="65" y2="65" stroke="url(#aGoldGradient)" strokeWidth="3" strokeLinecap="round"/>
+              
+              {/* Horizontal crossbar */}
+              <line x1="40" y1="50" x2="60" y2="50" stroke="url(#aGoldGradient)" strokeWidth="2.5" strokeLinecap="round"/>
+            </g>
+            
+            {/* Subtle accent flourish */}
+            <path d="M 68 70 Q 72 68 75 72" stroke="url(#aGoldGradient)" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
           </svg>
         </a>
 
