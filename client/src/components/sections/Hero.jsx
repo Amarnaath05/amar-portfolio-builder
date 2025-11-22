@@ -11,13 +11,13 @@ export default function Hero() {
         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 lg:gap-12 items-center py-12">
+      <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-6 z-10"
+          className="space-y-6"
         >
           <div className="space-y-2">
             <motion.p 
@@ -28,7 +28,7 @@ export default function Hero() {
             >
               Hi, I'm Amarnaath.
             </motion.p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight">
               MERN Stack <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 & ML Engineer
@@ -36,7 +36,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
             I build end-to-end web applications using the MERN stack and apply machine learning and NLP to turn raw data into insights.
           </p>
 
@@ -57,7 +57,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 md:gap-8 pt-8 text-muted-foreground/50">
+          <div className="flex items-center gap-8 pt-8 text-muted-foreground/50">
             <div className="flex items-center gap-2">
               <Code2 size={20} />
               <span className="text-sm font-mono">Full Stack</span>
@@ -78,18 +78,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden md:flex md:justify-center md:items-center h-[550px] lg:h-[650px]"
+          className="relative hidden md:block h-[600px]"
         >
-          {/* Character Container with Border */}
-          <div className="relative w-full h-full max-w-sm mx-auto">
-            {/* Border Frame */}
-            <div className="absolute inset-0 border-2 border-cyan-500/20 rounded-3xl pointer-events-none" />
-            
-            {/* 3D Character Canvas */}
-            <div className="w-full h-full rounded-3xl overflow-hidden bg-gradient-to-b from-background via-background to-cyan-500/5">
-              <Character3D />
-            </div>
-          </div>
+          {/* 3D Character Canvas */}
+          <Character3D />
 
           {/* Top Left - React Icon */}
           <motion.div
@@ -102,7 +94,7 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute left-0 top-16 z-30 lg:-left-16"
+            className="absolute -left-12 top-12 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-lg hover:border-cyan-500/60 transition-all">
               <Code2 className="w-8 h-8 text-cyan-400" />
@@ -121,7 +113,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 0.5
             }}
-            className="absolute right-0 top-12 z-30 lg:-right-16"
+            className="absolute -right-12 top-20 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-lg hover:border-green-500/60 transition-all">
               <Zap className="w-8 h-8 text-green-400" />
@@ -140,7 +132,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 1
             }}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-30 lg:-left-20"
+            className="absolute -left-12 top-1/2 transform -translate-y-1/2 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-lg hover:border-green-500/60 transition-all">
               <Database className="w-8 h-8 text-green-400" />
@@ -159,7 +151,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 1.5
             }}
-            className="absolute left-2 bottom-20 z-30 lg:-left-12"
+            className="absolute -left-8 bottom-16 z-20"
           >
             <div className="p-3 bg-background/60 backdrop-blur-xl border border-cyan-500/30 rounded-full shadow-lg hover:border-cyan-500/60 transition-all">
               <div className="w-6 h-6 rounded-full border-2 border-cyan-400" />
@@ -178,7 +170,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 0.3
             }}
-            className="absolute right-0 bottom-16 z-30 lg:-right-16"
+            className="absolute -right-12 bottom-20 z-20"
           >
             <div className="p-4 bg-background/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl shadow-lg hover:border-purple-500/60 transition-all">
               <Brain className="w-8 h-8 text-purple-400" />
