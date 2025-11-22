@@ -1,18 +1,18 @@
 [
   {
     "category": "Frontend & UI",
-    "items": ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "React Router", "Tailwind CSS", "Framer Motion"]
+    "items": ["HTML5", "CSS3 (Flexbox, Grid)", "JavaScript (ES6+)", "React.js", "React Vite", "Tailwind CSS", "Bootstrap", "Responsive Design", "Figma (UI/UX)"]
   },
   {
     "category": "Backend & Databases",
-    "items": ["Node.js", "Express.js", "MongoDB", "Mongoose", "REST APIs", "MySQL"]
+    "items": ["Node.js", "Express.js", "MongoDB (Mongoose)", "REST API Development", "JWT Authentication", "Middleware (Auth, Validation)", "CRUD Operations", "MongoDB Atlas", "Postman (API Testing)"]
   },
   {
     "category": "Machine Learning & NLP",
-    "items": ["Python", "Pandas", "NumPy", "Scikit-learn", "NLTK", "TF-IDF", "Transformers"]
+    "items": ["Python", "Pandas", "NumPy", "Scikit-Learn", "NLTK", "SpaCy", "TF-IDF", "RAKE", "Sentiment Analysis", "Logistic Regression", "SVM", "Naive Bayes", "Word Embeddings (TF-IDF, SBERT)", "Transformer Models (BERT, SBERT, RoBERTa)", "Topic Modeling (LDA)"]
   },
   {
     "category": "Tools & DevOps",
-    "items": ["Git", "GitHub", "Docker", "Postman", "Vite", "VS Code", "MongoDB Atlas"]
+    "items": ["Git & GitHub", "VS Code", "Docker (Learning)", "GitHub Actions (CI/CD Beginner)", "AWS (EC2, S3)", "Postman", "Vercel / Netlify Deployment", "npm", "yarn"]
   }
 ]
