@@ -58,8 +58,12 @@ export default function MLSection() {
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10">
                     {index === 0 ? <Bot className="w-8 h-8 text-emerald-400" /> : <BarChart3 className="w-8 h-8 text-blue-400" />}
                   </div>
-                  <div>
-                    <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
+                      <Bot className="w-4 h-4 text-primary opacity-60" />
+                      <ExternalLink className="w-4 h-4 text-secondary opacity-60" />
+                    </div>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {project.tech.map((t, i) => (
                         <span key={i} className="text-xs font-mono text-muted-foreground bg-muted px-2 py-1 rounded">
