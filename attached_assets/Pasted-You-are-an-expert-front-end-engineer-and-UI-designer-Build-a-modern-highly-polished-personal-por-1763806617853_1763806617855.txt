@@ -1,0 +1,204 @@
+You are an expert front-end engineer and UI designer. 
+Build a modern, highly polished personal portfolio website using React + Vite for:
+
+Name: **Amarnaath P**
+Role: **MERN Stack Developer & Machine Learning Engineer**
+Location: **Coimbatore, India**
+
+Overall requirements:
+- Tech: React + Vite, functional components, React Hooks.
+- Styling: Tailwind CSS (preferred) or clean, well-structured CSS modules.
+- Animations: Use Framer Motion (or a similar library) for smooth page and element transitions, and subtle hover animations.
+- 3D: Use a lightweight 3D/3D-like hero section (can use simple Three.js / React Three Fiber scene OR high-quality pseudo-3D effects like layered gradients, parallax cards, and floating shapes).
+- Design style: Clean, professional, HR-friendly, with a modern developer aesthetic.
+  - Soft gradients, glassmorphism cards, subtle shadows, rounded corners.
+  - Great typography hierarchy (big bold headings, readable body text).
+  - Consistent spacing and alignment.
+- Responsive: Must look perfect on desktop, tablet, and mobile.
+- Code: Clean, well-organized file structure, reusable components, clear comments.
+
+-----------------------------------
+CONTENT TO INCLUDE
+-----------------------------------
+
+1) NAVBAR
+- Left: Logo text: “AP” or “Amar”.
+- Right: Smooth scroll links: “Home”, “Skills”, “Projects”, “ML & NLP”, “Certifications”, “About”, “Contact”.
+- Add a subtle underline/indicator animation when section is active.
+
+2) HERO SECTION (Landing)
+Goal: Immediately impress HR with role and vibe.
+
+Content:
+- Big heading:
+  “Hi, I’m Amarnaath.”
+  Second line: “MERN Stack Developer & Machine Learning Engineer.”
+- Short subheading (2–3 lines):
+  “I build end-to-end web applications using the MERN stack and apply machine learning and NLP to turn raw data into insights. I enjoy solving real-world problems, from scalable web platforms to intelligent review analysis.”
+- Primary CTA button: “View My Projects”
+- Secondary CTA button: “Download Resume”
+- Layout:
+  - Left side: Text content + buttons.
+  - Right side: 3D or pseudo-3D area:
+    - Example: A rotating 3D cube or laptop model, or layered floating cards representing “Code”, “Data”, and “AI”.
+    - Add gentle floating animation and parallax on mouse move.
+
+3) EDUCATION SECTION
+Title: “Education”
+
+Content (card style):
+- Degree: **[B.E./B.Tech] in Computer Science and Engineering**
+- College: **[Your College Name], Coimbatore**
+- Duration: **[e.g., 2022 – 2026]**
+- Short line:
+  “Focused on full-stack web development, data structures, algorithms, and machine learning, with multiple hands-on academic and personal projects.”
+
+4) SKILLS SECTION
+Title: “Skills”
+
+Use animated skill cards or a grid with category tags, each card with hover/3D tilt effect.
+
+Categories and items:
+
+- “Frontend & UI”
+  - HTML5, CSS3, JavaScript (ES6+), React, React Router, Tailwind CSS, Responsive Design.
+
+- “Backend & Databases”
+  - Node.js, Express.js, MongoDB, Mongoose, REST APIs, MySQL basics.
+
+- “Machine Learning & NLP”
+  - Python, Pandas, NumPy, Scikit-learn, NLP (tokenization, TF-IDF, LDA, RAKE), basic Transformers, sentiment and multi-label classification.
+
+- “Tools & Version Control”
+  - Git, GitHub, Postman, VS Code.
+
+Visual behavior:
+- Each skill card animates in on scroll (fade-up + slight scale).
+- On hover: slight 3D tilt + shadow.
+
+5) PROJECTS SECTION (MERN & FRONTEND)
+Title: “Projects”
+
+Create a responsive grid of project cards with hover animations and tags.
+
+Include these projects (each as a card):
+
+a) “Freelance Marketplace – MERN Stack”
+   - Description:
+     “A full-stack freelance marketplace where clients can post jobs and freelancers can create profiles, bid on projects, and showcase portfolios. Includes role-based navigation (client, freelancer, admin), job browsing, and project gallery.”
+   - Tech tags: React, Node.js, Express, MongoDB, JWT Auth, Role-based Access.
+   - Buttons: “View Code”, “Live Demo” (placeholder links).
+
+b) “React Vite Book Store”
+   - Description:
+     “A modern book store web app built with React Vite and MongoDB. Users can browse books, view details, and manage a simple library-style interface.”
+   - Tech tags: React Vite, Node.js, MongoDB, REST API.
+
+c) “Weather App”
+   - Description:
+     “A responsive weather app using a public Weather API to show real-time temperature, conditions, and city-based search.”
+   - Tech tags: HTML, CSS, JavaScript, Weather API.
+
+d) “Personal React Portfolio”
+   - Description:
+     “A previous version of my portfolio focusing on clean UI, responsive layout, and smooth scrolling sections to showcase my work.”
+   - Tech tags: React, CSS, EmailJS (for contact form).
+
+Visual behavior:
+- Cards animate in on scroll.
+- On hover: lift-up effect, slight blur in background, clear project details.
+
+6) MACHINE LEARNING & NLP SECTION
+Title: “ML & NLP Projects”
+
+Highlight ML-specific work in their own section to impress data/AI-aware recruiters.
+
+Projects to include:
+
+a) “Google Reviews NLP Classifier”
+   - Description:
+     “An NLP project analyzing supermarket Google Reviews and automatically classifying each review into service quality dimensions like Tangibles, Reliability, Responsiveness, Assurance, and Empathy. Implemented multi-label classification and detailed evaluation metrics (Micro/Macro F1, Cohen’s Kappa, Subset Accuracy).”
+   - Tech tags: Python, Pandas, Scikit-learn, NLTK, TF-IDF, Multi-label Classification, Evaluation Metrics.
+   - Visual: small chart or card showing sample metrics.
+
+b) “Google Maps Supermarket Scraper & Insights”
+   - Description:
+     “Automated data collection from Google Maps for supermarkets across multiple cities, cleaning and combining the data, and preparing it for NLP and analytics.”
+   - Tech tags: Python, Web Scraping, Data Cleaning, Pandas.
+
+Visual behavior:
+- Use timeline or two-wide layout.
+- Optional: small charts/infographics illustrating metrics or data flow.
+
+7) CERTIFICATIONS SECTION
+Title: “Certifications”
+
+Use a simple, clean list or cards:
+
+Examples (PLACEHOLDERS – DO NOT HARDCODE, LET USER EDIT):
+- “[Certification 1 – e.g., Front-End Development Course, Platform]”
+- “[Certification 2 – e.g., Machine Learning / Data Science Course, Platform]”
+- “[Certification 3 – Any relevant workshop / hackathon participation]”
+
+Design:
+- Each certification in a pill/card with subtle icon and date/issuer text.
+- Animate in from left/right on scroll.
+
+8) ABOUT ME SECTION
+Title: “About Me”
+
+Text (use this as the main content, structured nicely):
+
+“I’m Amarnaath, a MERN Stack Developer and Machine Learning enthusiast from Coimbatore. I enjoy building complete solutions: frontend interfaces that feel smooth and intuitive, backend APIs that are clean and secure, and ML pipelines that turn unstructured data into actionable insights.
+
+In my projects, I’ve worked on a freelance marketplace platform, a book store web app, and multiple NLP-based systems analyzing Google Reviews and service quality. I like breaking complex problems into smaller parts, experimenting, and continuously improving my code and models.
+
+When I’m not coding, I’m usually exploring new tools, reading about system design and ML best practices, or refining my existing projects to make them more production-ready. I’m actively looking for opportunities as a Front-End / MERN Stack Developer, and I’m excited to contribute to real-world products and learn from experienced teams.”
+
+Layout:
+- Left: Text in a glassmorphism card.
+- Right: A 3D / pseudo-3D illustration or avatar representation of a developer at a desk with code and charts.
+
+9) CONTACT SECTION
+Title: “Contact Me”
+
+Content:
+- Short line:
+  “Let’s connect. I’m open to full-time roles, internships, and interesting project collaborations.”
+- Contact details:
+  - Email: **[your_email@example.com]**
+  - Phone/WhatsApp: **[+91-XXXXXXXXXX]**
+  - LinkedIn: **[linkedin.com/in/your-profile]**
+  - GitHub: **[github.com/your-username]**
+
+Include:
+- A simple contact form with fields: Name, Email, Message, and a “Send Message” button.
+- Form validation and basic success message (no need for backend – fake success handling or integrate with EmailJS-style service if needed).
+
+10) FOOTER
+- Simple footer with:
+  - “© {currentYear} Amarnaath P. All rights reserved.”
+  - Small links to GitHub and LinkedIn icons.
+
+-----------------------------------
+INTERACTION & ANIMATION DETAILS
+-----------------------------------
+
+- Use Framer Motion for:
+  - Page load animation for the hero.
+  - Section fade-in / slide-up when scrolled into view.
+  - Hover effects on buttons and cards.
+- Optional: add a theme toggle (light/dark mode) in the navbar.
+- Implement smooth scroll for navigation links.
+- Make sure the site feels dynamic but still professional and not over-animated.
+
+-----------------------------------
+DELIVERABLE
+-----------------------------------
+
+Return:
+- A complete React + Vite project structure.
+- Components split logically: 
+  - `Navbar`, `Hero`, `Education`, `Skills`, `Projects`, `MLSection`, `Certifications`, `About`, `Contact`, `Footer`.
+- Include example data as described above so the portfolio works out of the box.
+- Use clean, production-quality code that an HR or hiring manager viewing the live site would find professional and impressive.
