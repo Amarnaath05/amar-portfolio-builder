@@ -13,7 +13,7 @@ const certifications = [
     issuer: "Meta",
     date: "2024",
     logo: metaLogo,
-    verificationLink: "https://www.coursera.org/account/accomplishments/verify/META"
+    verificationLink: "https://coursera.org/share/e1c4fdc90a0e88b94fe9776035eedb85"
   },
   {
     id: "2",
@@ -21,7 +21,7 @@ const certifications = [
     issuer: "HackerRank",
     date: "2025",
     logo: hackerRankLogo,
-    verificationLink: "https://www.hackerrank.com/certificates/verify"
+    verificationLink: "https://www.hackerrank.com/certificates/4072df5604e9"
   },
   {
     id: "3",
@@ -29,7 +29,7 @@ const certifications = [
     issuer: "IBM – Cognitive Class",
     date: "2024",
     logo: ibmLogo,
-    verificationLink: "https://cognitiveclass.ai/certificates"
+    verificationLink: "https://courses.cognitiveclass.ai/certificates/53159511639e4bb3911e86a8bc2852a8"
   }
 ];
 
