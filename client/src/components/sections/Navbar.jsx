@@ -47,29 +47,24 @@ export default function Navbar() {
         >
           <svg className="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="aGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#FCD34D" />
-                <stop offset="100%" stopColor="#F59E0B" />
+              <linearGradient id="aBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0ea5e9" />
+                <stop offset="100%" stopColor="#0284c7" />
               </linearGradient>
             </defs>
             
-            {/* Outer circular ring - Main */}
-            <circle cx="50" cy="50" r="44" stroke="url(#aGoldGradient)" strokeWidth="3" fill="none"/>
-            
-            {/* Inner decorative circle */}
-            <circle cx="50" cy="50" r="40" stroke="url(#aGoldGradient)" strokeWidth="1" fill="none" opacity="0.5"/>
-            
-            {/* Elegant "A" letter - Left diagonal */}
-            <line x1="36" y1="68" x2="50" y2="28" stroke="url(#aGoldGradient)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+            {/* Triangular "A" - Left diagonal */}
+            <line x1="32" y1="72" x2="50" y2="20" stroke="url(#aBlueGradient)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
             
             {/* Right diagonal */}
-            <line x1="50" y1="28" x2="64" y2="68" stroke="url(#aGoldGradient)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <line x1="50" y1="20" x2="68" y2="72" stroke="url(#aBlueGradient)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
             
             {/* Horizontal crossbar */}
-            <line x1="40" y1="50" x2="60" y2="50" stroke="url(#aGoldGradient)" strokeWidth="3" strokeLinecap="round"/>
+            <line x1="38" y1="54" x2="62" y2="54" stroke="url(#aBlueGradient)" strokeWidth="3.5" strokeLinecap="round"/>
             
-            {/* Accent flourish - elegant swash */}
-            <path d="M 66 72 Q 72 70 76 74" stroke="url(#aGoldGradient)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+            {/* Orbital ring - smooth curved path */}
+            <path d="M 20 50 Q 15 35 25 25 Q 45 10 70 20 Q 80 25 82 45 Q 83 65 70 80 Q 50 95 35 85 Q 18 75 20 50" 
+                  stroke="url(#aBlueGradient)" strokeWidth="3.5" fill="none" strokeLinecap="round"/>
           </svg>
         </a>
 
