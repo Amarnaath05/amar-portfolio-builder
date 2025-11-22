@@ -1,25 +1,32 @@
 import { motion } from "framer-motion";
-import { Award, Calendar } from "lucide-react";
+import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const certifications = [
   {
     id: "1",
-    title: "Front-End Development Course",
-    issuer: "Udemy",
-    date: "2024"
+    title: "Introduction to Front-End Development",
+    issuer: "Meta",
+    date: "2024",
+    logo: "🔵",
+    verificationLink: "https://www.coursera.org/account/accomplishments/verify/META"
   },
   {
     id: "2",
-    title: "Machine Learning & Data Science Bootcamp",
-    issuer: "Coursera",
-    date: "2023"
+    title: "Frontend Developer (React)",
+    issuer: "HackerRank",
+    date: "2025",
+    logo: "⬛",
+    verificationLink: "https://www.hackerrank.com/certificates/verify"
   },
   {
     id: "3",
-    title: "Hackathon Participation: Smart India Hackathon",
-    issuer: "Government of India",
-    date: "2023"
+    title: "Machine Learning with Python",
+    issuer: "IBM – Cognitive Class",
+    date: "2024",
+    logo: "🟦",
+    verificationLink: "https://cognitiveclass.ai/certificates"
   }
 ];
 
@@ -37,28 +44,42 @@ export default function Certifications() {
           <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
         </motion.div>
 
-        <div className="max-w-4xl mx-auto grid gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.id}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="bg-card border-border/50 hover:border-primary/30 transition-all duration-300 group">
-                <CardContent className="p-6 flex items-center gap-6">
-                  <div className="bg-secondary/10 p-3 rounded-full group-hover:bg-secondary/20 transition-colors">
-                    <Award className="w-6 h-6 text-secondary" />
+              <Card className="h-full bg-card/50 border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden">
+                <CardContent className="p-6 flex flex-col h-full gap-4">
+                  <div className="flex items-start justify-between">
+                    <div className="text-5xl">{cert.logo}</div>
+                    <span className="inline-flex items-center text-xs text-muted-foreground/70 bg-muted px-2 py-1 rounded-full">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {cert.date}
+                    </span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold font-display group-hover:text-primary transition-colors">{cert.title}</h3>
-                    <p className="text-muted-foreground">{cert.issuer}</p>
+                  
+                  <div className="flex-1 space-y-2">
+                    <p className="text-sm font-mono text-primary">{cert.issuer}</p>
+                    <h3 className="text-lg font-bold font-display group-hover:text-primary transition-colors leading-snug">
+                      {cert.title}
+                    </h3>
                   </div>
-                  <div className="hidden sm:flex items-center text-sm text-muted-foreground/70 bg-muted px-3 py-1 rounded-full">
-                    <Calendar className="w-3 h-3 mr-2" />
-                    {cert.date}
-                  </div>
+
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full gap-2 hover:text-primary hover:border-primary/50 mt-auto"
+                    asChild
+                  >
+                    <a href={cert.verificationLink} target="_blank" rel="noopener noreferrer">
+                      Verify <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
