@@ -39,37 +39,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a 
-          href="#home" 
-          onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
-          className="flex items-center justify-center w-10 h-10 hover:scale-110 transition-transform duration-300"
-          title="Amarnaath Portfolio"
-        >
-          <svg className="w-10 h-10" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="aGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00d4ff" />
-                <stop offset="50%" stopColor="#0099ff" />
-                <stop offset="100%" stopColor="#6633ff" />
-              </linearGradient>
-              <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.3"/>
-              </filter>
-            </defs>
-            
-            {/* Main "A" filled triangle */}
-            <path d="M 60 15 L 25 95 L 95 95 Z" fill="url(#aGradient)" filter="url(#shadow)"/>
-            
-            {/* Inner cutout for crossbar effect */}
-            <path d="M 40 70 L 80 70 L 75 80 L 45 80 Z" fill="white" opacity="0.95"/>
-            
-            {/* Highlight accent on top */}
-            <ellipse cx="60" cy="35" rx="12" ry="8" fill="white" opacity="0.4"/>
-            
-            {/* Premium border accent */}
-            <path d="M 25 95 L 95 95" stroke="url(#aGradient)" strokeWidth="2" opacity="0.6" strokeLinecap="round"/>
-          </svg>
-        </a>
+        <div className="w-10"></div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
