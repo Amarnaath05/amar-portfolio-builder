@@ -42,9 +42,24 @@ export default function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
-          className="text-2xl font-bold font-display tracking-tighter text-primary"
+          className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+          title="Amarnaath Portfolio"
         >
-          AP<span className="text-foreground">.</span>
+          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="aGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{stopColor: '#00ffff', stopOpacity: 1}} />
+                <stop offset="100%" style={{stopColor: '#8b5cf6', stopOpacity: 1}} />
+              </linearGradient>
+            </defs>
+            {/* Modern geometric A */}
+            <path 
+              d="M12 2 L2 22 H6.5 L8.5 17 H15.5 L17.5 22 H22 L12 2 Z M9.5 13 L12 6.5 L14.5 13 H9.5 Z" 
+              fill="url(#aGradient)" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
         </a>
 
         {/* Desktop Nav */}
