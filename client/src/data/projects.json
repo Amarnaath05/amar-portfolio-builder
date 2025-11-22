@@ -28,9 +28,18 @@
   },
   {
     "id": "4",
-    "title": "Personal Portfolio v1",
-    "description": "Previous iteration of my personal website focusing on clean UI and smooth scroll interactions.",
-    "techStack": ["React", "CSS Modules", "EmailJS", "Framer Motion"],
+    "title": "ToDo-List_MernStack",
+    "description": "Full-stack task management application that lets users create, update, prioritize, and track daily tasks with persistent storage and secure authentication.",
+    "techStack": ["MongoDB", "Express.js", "React.js", "Node.js", "REST API", "JWT Authentication"],
+    "liveLink": "#",
+    "githubLink": "#",
+    "image": "placeholder"
+  },
+  {
+    "id": "5",
+    "title": "Diabetes Prediction System",
+    "description": "Supervised machine learning pipeline to predict the likelihood of diabetes using patient health indicators, including data preprocessing, feature analysis, model training, and performance evaluation.",
+    "techStack": ["Python", "Jupyter Notebook", "Pandas", "Scikit-learn", "NumPy", "Matplotlib/Seaborn"],
     "liveLink": "#",
     "githubLink": "#",
     "image": "placeholder"
