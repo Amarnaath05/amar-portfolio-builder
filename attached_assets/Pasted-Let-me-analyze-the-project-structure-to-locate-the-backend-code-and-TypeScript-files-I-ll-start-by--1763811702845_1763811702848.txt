@@ -1,0 +1,84 @@
+Let me analyze the project structure to locate the backend code and TypeScript files. I'll start by examining the project directory.
+
+Analyzed
+c:\Users\Amar\Downloads\PortfolioBuilder (2)
+Let me explore the PortfolioBuilder directory to find the backend code and TypeScript files.
+
+Analyzed
+c:\Users\Amar\Downloads\PortfolioBuilder (2)\PortfolioBuilder
+Let me check the server directory first, as it likely contains the backend code, and then I'll look at the client directory for TypeScript files.
+
+1. Backend Code Analysis
+Let's examine the server directory:
+
+Analyzed
+c:\Users\Amar\Downloads\PortfolioBuilder (2)\PortfolioBuilder\server
+2. TypeScript Presence
+Let's check the client directory for TypeScript files:
+
+Analyzed
+c:\Users\Amar\Downloads\PortfolioBuilder (2)\PortfolioBuilder\client
+Let me check the source directory for TypeScript files to get a complete picture of the project structure and its components.
+
+Analyzed
+c:\Users\Amar\Downloads\PortfolioBuilder (2)\PortfolioBuilder\client\src
+Project Analysis: Backend and TypeScript
+1. Backend Code
+Location: 
+server/
+ directory
+
+Key Files:
+
+app.ts
+ - Main Express.js application setup
+index-dev.ts
+ - Development server entry point
+index-prod.ts
+ - Production server entry point
+routes.ts
+ - API route definitions
+storage.ts
+ - File storage configuration
+Purpose: The backend is built with Node.js/Express.js and handles:
+
+API endpoints for portfolio data
+File uploads and management
+Environment-specific configurations (dev/prod)
+Database interactions (Drizzle ORM)
+2. TypeScript Usage
+Main Locations:
+
+Frontend (
+client/
+ directory):
+src/
+ - Main application code
+App.tsx
+ - Root React component
+main.tsx
+ - Application entry point
+components/
+ - Reusable UI components
+pages/
+ - Page components
+types/
+ - TypeScript type definitions
+hooks/
+ - Custom React hooks
+lib/
+ - Utility functions
+Configuration:
+tsconfig.json
+ - TypeScript configuration
+vite.config.ts
+ - Vite build tool configuration
+drizzle.config.ts
+ - Database ORM configuration
+TypeScript Features:
+
+Strong typing throughout the application
+React components written in TypeScript (.tsx)
+Type definitions for API responses and data models
+Modern JavaScript/TypeScript features (ES modules, async/await, etc.)
+This is a full-stack TypeScript application with a clear separation between frontend and backend concerns. The backend serves as an API layer, while the frontend is a modern React application built with TypeScript for type safety.
