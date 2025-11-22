@@ -5,7 +5,7 @@
     "description": "A full-stack platform where clients post jobs and freelancers bid. Features role-based dashboards, JWT auth, and project management tools.",
     "techStack": ["React", "Node.js", "Express", "MongoDB", "JWT"],
     "liveLink": "#",
-    "githubLink": "#",
+    "githubLink": "https://github.com/Amarnaath05/Mern-Freelance-Marketplace.git",
     "image": "placeholder"
   },
   {
@@ -13,8 +13,8 @@
     "title": "React Vite Book Store",
     "description": "Modern book store app with library management features. Users can browse, search, and view detailed book information.",
     "techStack": ["React", "Vite", "Node.js", "MongoDB", "REST API"],
-    "liveLink": "#",
-    "githubLink": "#",
+    "liveLink": "https://the-book-shelf-tau.vercel.app/",
+    "githubLink": "https://github.com/Amarnaath05/The-BookShelf.git",
     "image": "placeholder"
   },
   {
@@ -23,7 +23,7 @@
     "description": "Responsive weather application providing real-time forecasts and city-based search using external Weather APIs.",
     "techStack": ["HTML5", "CSS3", "JavaScript", "OpenWeather API"],
     "liveLink": "#",
-    "githubLink": "#",
+    "githubLink": "https://github.com/Amarnaath05/Weather-app.git",
     "image": "placeholder"
   },
   {
@@ -32,7 +32,7 @@
     "description": "Full-stack task management application that lets users create, update, prioritize, and track daily tasks with persistent storage and secure authentication.",
     "techStack": ["MongoDB", "Express.js", "React.js", "Node.js", "REST API", "JWT Authentication"],
     "liveLink": "#",
-    "githubLink": "#",
+    "githubLink": "https://github.com/Amarnaath05/ToDo-List_MernStack.git",
     "image": "placeholder"
   }
 ]
