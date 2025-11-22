@@ -34,14 +34,5 @@
     "liveLink": "#",
     "githubLink": "#",
     "image": "placeholder"
-  },
-  {
-    "id": "5",
-    "title": "Diabetes Prediction System",
-    "description": "Supervised machine learning pipeline to predict the likelihood of diabetes using patient health indicators, including data preprocessing, feature analysis, model training, and performance evaluation.",
-    "techStack": ["Python", "Jupyter Notebook", "Pandas", "Scikit-learn", "NumPy", "Matplotlib/Seaborn"],
-    "liveLink": "#",
-    "githubLink": "#",
-    "image": "placeholder"
   }
 ]

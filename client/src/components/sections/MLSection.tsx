@@ -15,6 +15,12 @@ const mlProjects: MLProject[] = [
     description: "Automated pipeline to scrape, clean, and structure data from Google Maps across multiple cities for downstream NLP analysis.",
     metrics: ["Data Cleaning", "Web Scraping", "Data Pipeline"],
     tech: ["Python", "Selenium", "BeautifulSoup", "Pandas"]
+  },
+  {
+    title: "Diabetes Prediction System",
+    description: "Supervised machine learning pipeline to predict the likelihood of diabetes using patient health indicators, including data preprocessing, feature analysis, model training, and performance evaluation.",
+    metrics: ["Classification", "Model Evaluation", "Medical Dataset Analysis", "Feature Engineering & Data Cleaning"],
+    tech: ["Python", "Jupyter Notebook", "Pandas", "Scikit-learn", "NumPy", "Matplotlib/Seaborn"]
   }
 ];
 
