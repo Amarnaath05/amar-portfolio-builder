@@ -39,7 +39,14 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <div className="w-10"></div>
+        <a 
+          href="#home" 
+          onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }}
+          className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/30 hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
+          title="Amarnaath"
+        >
+          <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">A</span>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
