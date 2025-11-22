@@ -48,39 +48,28 @@ export default function Navbar() {
           <svg className="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="aGoldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor: '#fbbf24', stopOpacity: 1}} />
-                <stop offset="50%" style={{stopColor: '#f59e0b', stopOpacity: 1}} />
-                <stop offset="100%" style={{stopColor: '#d97706', stopOpacity: 1}} />
+                <stop offset="0%" stopColor="#FCD34D" />
+                <stop offset="100%" stopColor="#F59E0B" />
               </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
             </defs>
             
-            {/* Outer circular ring */}
-            <circle cx="50" cy="50" r="46" stroke="url(#aGoldGradient)" strokeWidth="2.5" fill="none" filter="url(#glow)"/>
+            {/* Outer circular ring - Main */}
+            <circle cx="50" cy="50" r="44" stroke="url(#aGoldGradient)" strokeWidth="3" fill="none"/>
             
             {/* Inner decorative circle */}
-            <circle cx="50" cy="50" r="42" stroke="url(#aGoldGradient)" strokeWidth="0.8" fill="none" opacity="0.4"/>
+            <circle cx="50" cy="50" r="40" stroke="url(#aGoldGradient)" strokeWidth="1" fill="none" opacity="0.5"/>
             
-            {/* Elegant "A" letter */}
-            <g filter="url(#glow)">
-              {/* Left diagonal */}
-              <line x1="35" y1="65" x2="50" y2="25" stroke="url(#aGoldGradient)" strokeWidth="3" strokeLinecap="round"/>
-              
-              {/* Right diagonal */}
-              <line x1="50" y1="25" x2="65" y2="65" stroke="url(#aGoldGradient)" strokeWidth="3" strokeLinecap="round"/>
-              
-              {/* Horizontal crossbar */}
-              <line x1="40" y1="50" x2="60" y2="50" stroke="url(#aGoldGradient)" strokeWidth="2.5" strokeLinecap="round"/>
-            </g>
+            {/* Elegant "A" letter - Left diagonal */}
+            <line x1="36" y1="68" x2="50" y2="28" stroke="url(#aGoldGradient)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
             
-            {/* Subtle accent flourish */}
-            <path d="M 68 70 Q 72 68 75 72" stroke="url(#aGoldGradient)" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+            {/* Right diagonal */}
+            <line x1="50" y1="28" x2="64" y2="68" stroke="url(#aGoldGradient)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+            
+            {/* Horizontal crossbar */}
+            <line x1="40" y1="50" x2="60" y2="50" stroke="url(#aGoldGradient)" strokeWidth="3" strokeLinecap="round"/>
+            
+            {/* Accent flourish - elegant swash */}
+            <path d="M 66 72 Q 72 70 76 74" stroke="url(#aGoldGradient)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
           </svg>
         </a>
 
