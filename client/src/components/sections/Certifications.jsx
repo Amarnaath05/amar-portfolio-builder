@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import metaLogo from "@assets/image_1763813755354.png";
+import metaLogo from "@assets/meta-removebg-preview_1763831716433.png";
 import hackerRankLogo from "@assets/image_1763813799198.png";
 import ibmLogo from "@assets/image_1763813828440.png";
 
