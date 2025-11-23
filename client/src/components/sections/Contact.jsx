@@ -38,12 +38,15 @@ export default function Contact() {
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      const response = await emailjs.send("service_ap0z9tn", "OF9aNqk4iOjSb5XFY", {
+      const templateParams = {
         from_name: data.name,
         from_email: data.email,
         message: data.message,
-        to_email: "amarnaathamarnaath12@gmail.com",
-      });
+      };
+
+      console.log("Sending with params:", templateParams);
+
+      await emailjs.send("service_ap0z9tn", "OF9aNqk4iOjSb5XFY", templateParams);
       
       toast({
         title: "Message Sent!",
@@ -52,6 +55,7 @@ export default function Contact() {
       form.reset();
     } catch (error) {
       console.error("EmailJS Error:", error);
+      console.error("Error details:", error.text);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
