@@ -9,6 +9,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -18,6 +20,8 @@ const contactSchema = z.object({
 
 export default function Contact() {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
+  
   const form = useForm({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -27,13 +31,35 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  useEffect(() => {
+    emailjs.init("OF9aNqk4iOjSb5XFY");
+  }, []);
+
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      const response = await emailjs.send("service_ap0z9tn", "OF9aNqk4iOjSb5XFY", {
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message,
+        to_email: "amarnaathamarnaath12@gmail.com",
+      });
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -111,7 +137,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
-                            <Input {...field} className="bg-background/50" />
+                            <Input {...field} className="bg-background/50" disabled={isLoading} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -124,7 +150,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input {...field} className="bg-background/50" />
+                            <Input {...field} className="bg-background/50" disabled={isLoading} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -137,14 +163,18 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Message</FormLabel>
                           <FormControl>
-                            <Textarea className="min-h-[120px] bg-background/50" {...field} />
+                            <Textarea className="min-h-[120px] bg-background/50" {...field} disabled={isLoading} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      Send Message <Send className="ml-2 h-4 w-4" />
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? "Sending..." : "Send Message"} <Send className="ml-2 h-4 w-4" />
                     </Button>
                   </form>
                 </Form>
