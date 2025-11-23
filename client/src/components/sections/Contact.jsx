@@ -60,33 +60,37 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-bold font-display">Let's Connect</h3>
             <div className="space-y-6">
-              <a href="mailto:your_email@example.com" className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group">
-                <div className="bg-primary/10 p-3 rounded-full text-primary group-hover:scale-110 transition-transform">
+              <a href="mailto:amarnaathamarnaath12@gmail.com" className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group">
+                <div className="bg-primary/10 p-3 rounded-full text-primary group-hover:scale-110 transition-transform flex-shrink-0">
                   <Mail size={20} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="text-foreground font-medium">your_email@example.com</p>
+                  <p className="text-foreground font-medium truncate">amarnaathamarnaath12@gmail.com</p>
                 </div>
               </a>
               
-              <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group">
-                <div className="bg-secondary/10 p-3 rounded-full text-secondary group-hover:scale-110 transition-transform">
+              <a href="tel:+918220321418" className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors group">
+                <div className="bg-secondary/10 p-3 rounded-full text-secondary group-hover:scale-110 transition-transform flex-shrink-0">
                   <Phone size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="text-foreground font-medium">+91-XXXXXXXXXX</p>
+                  <p className="text-foreground font-medium">+91-8220321418</p>
                 </div>
               </a>
 
               <div className="flex gap-4 pt-4">
-                <Button variant="outline" className="flex-1 gap-2 hover:text-primary hover:border-primary/50">
-                  <Linkedin size={18} /> LinkedIn
-                </Button>
-                <Button variant="outline" className="flex-1 gap-2 hover:text-primary hover:border-primary/50">
-                  <Github size={18} /> GitHub
-                </Button>
+                <a href="https://www.linkedin.com/in/amarnaath-pechimuthu-99617426a/" target="_blank" rel="noopener noreferrer" className="flex-1">
+                  <Button variant="outline" className="w-full gap-2 hover:text-primary hover:border-primary/50">
+                    <Linkedin size={18} /> LinkedIn
+                  </Button>
+                </a>
+                <a href="https://github.com/Amarnaath05" target="_blank" rel="noopener noreferrer" className="flex-1">
+                  <Button variant="outline" className="w-full gap-2 hover:text-primary hover:border-primary/50">
+                    <Github size={18} /> GitHub
+                  </Button>
+                </a>
               </div>
             </div>
           </motion.div>
@@ -107,7 +111,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} className="bg-background/50" />
+                            <Input {...field} className="bg-background/50" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -120,7 +124,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="john@example.com" {...field} className="bg-background/50" />
+                            <Input {...field} className="bg-background/50" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -133,7 +137,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Message</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Tell me about your project..." className="min-h-[120px] bg-background/50" {...field} />
+                            <Textarea className="min-h-[120px] bg-background/50" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
