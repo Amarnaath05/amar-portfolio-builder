@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Code2, Database, Brain, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Character3D from "@/components/3d/Character3D";
-import resumePDF from "@assets/Amarnaath_P_Software_Developer_Resume(3).pdf_1763834741071.pdf";
+// ✅ UPDATED IMPORT – points to src/assets
+import resumePDF from "@/assets/Amar_Resume.pdf";
 
 export default function Hero() {
   return (
@@ -55,13 +56,13 @@ export default function Hero() {
               className="rounded-full px-8 border-primary/20 hover:bg-primary/10 hover:text-primary transition-all"
               onClick={() => {
                 // Open in new tab to view
-                window.open(resumePDF, '_blank');
+                window.open(resumePDF, "_blank");
                 
                 // Also trigger download
                 setTimeout(() => {
-                  const link = document.createElement('a');
+                  const link = document.createElement("a");
                   link.href = resumePDF;
-                  link.download = 'Amarnaath_P_Resume.pdf';
+                  link.download = "Amarnaath_P_Resume.pdf";
                   document.body.appendChild(link);
                   link.click();
                   document.body.removeChild(link);
