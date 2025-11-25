@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import metaLogo from "@assets/meta_1763831883618.png";
-import hackerRankLogo from "@assets/image_1763813799198.png";
-import ibmLogo from "@assets/image_1763813828440.png";
+
+// ✅ FIXED: use relative imports instead of @assets
+import metaLogo from "../../assets/meta_1763831883618.png";
+import hackerRankLogo from "../../assets/image_1763813799198.png";
+import ibmLogo from "../../assets/image_1763813828440.png";
 
 const certifications = [
   {
@@ -13,7 +15,8 @@ const certifications = [
     issuer: "Meta",
     date: "2024",
     logo: metaLogo,
-    verificationLink: "https://coursera.org/share/e1c4fdc90a0e88b94fe9776035eedb85"
+    verificationLink:
+      "https://coursera.org/share/e1c4fdc90a0e88b94fe9776035eedb85",
   },
   {
     id: "2",
@@ -21,7 +24,7 @@ const certifications = [
     issuer: "HackerRank",
     date: "2025",
     logo: hackerRankLogo,
-    verificationLink: "https://www.hackerrank.com/certificates/4072df5604e9"
+    verificationLink: "https://www.hackerrank.com/certificates/4072df5604e9",
   },
   {
     id: "3",
@@ -29,8 +32,9 @@ const certifications = [
     issuer: "IBM – Cognitive Class",
     date: "2024",
     logo: ibmLogo,
-    verificationLink: "https://courses.cognitiveclass.ai/certificates/53159511639e4bb3911e86a8bc2852a8"
-  }
+    verificationLink:
+      "https://courses.cognitiveclass.ai/certificates/53159511639e4bb3911e86a8bc2852a8",
+  },
 ];
 
 export default function Certifications() {
@@ -43,7 +47,9 @@ export default function Certifications() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">
+            Certifications
+          </h2>
           <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
         </motion.div>
 
@@ -60,9 +66,9 @@ export default function Certifications() {
                 <CardContent className="p-6 flex flex-col h-full gap-4">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <img 
-                        src={cert.logo} 
-                        alt={cert.issuer} 
+                      <img
+                        src={cert.logo}
+                        alt={cert.issuer}
                         className="h-12 w-auto object-contain group-hover:scale-110 transition-transform filter brightness-110"
                       />
                     </div>
@@ -71,21 +77,27 @@ export default function Certifications() {
                       {cert.date}
                     </span>
                   </div>
-                  
+
                   <div className="flex-1 space-y-2">
-                    <p className="text-sm font-mono text-primary">{cert.issuer}</p>
+                    <p className="text-sm font-mono text-primary">
+                      {cert.issuer}
+                    </p>
                     <h3 className="text-lg font-bold font-display group-hover:text-primary transition-colors leading-snug">
                       {cert.title}
                     </h3>
                   </div>
 
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     className="w-full gap-2 hover:text-primary hover:border-primary/50 mt-auto"
                     asChild
                   >
-                    <a href={cert.verificationLink} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={cert.verificationLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Verify <ExternalLink className="w-3 h-3" />
                     </a>
                   </Button>
