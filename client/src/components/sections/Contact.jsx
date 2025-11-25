@@ -11,7 +11,6 @@ import { useToast } from "@/hooks/use-toast";
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "emailjs-com";
 
 const contactSchema = z.object({
@@ -25,7 +24,6 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm({
-    resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -40,6 +38,31 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
+
+    // ✅ Zod validation (without resolver)
+    const result = contactSchema.safeParse(data);
+    if (!result.success) {
+      const fieldErrors = result.error.formErrors.fieldErrors;
+
+      // Map Zod errors into React Hook Form errors
+      Object.entries(fieldErrors).forEach(([key, messages]) => {
+        if (!messages || messages.length === 0) return;
+        form.setError(key, {
+          type: "manual",
+          message: messages[0],
+        });
+      });
+
+      toast({
+        title: "Please fix the highlighted fields",
+        description: "Some information you entered is not valid.",
+        variant: "destructive",
+      });
+
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const templateParams = {
         from_name: data.name,
@@ -49,8 +72,11 @@ export default function Contact() {
 
       console.log("Sending with params:", templateParams);
 
-      // service_id, template_id, templateParams
-      await emailjs.send("service_ap0z9tn", "OF9aNqk4iOjSb5XFY", templateParams);
+      await emailjs.send(
+        "service_ap0z9tn",
+        "OF9aNqk4iOjSb5XFY",
+        templateParams
+      );
 
       toast({
         title: "Message Sent!",
@@ -59,7 +85,6 @@ export default function Contact() {
       form.reset();
     } catch (error) {
       console.error("EmailJS Error:", error);
-
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
@@ -88,7 +113,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Left: Contact info */}
+          {/* Left: contact info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -156,7 +181,7 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Right: Form */}
+          {/* Right: form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
