@@ -3,8 +3,8 @@ import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-// ✅ FIXED: use relative imports instead of @assets
-import metaLogo from "../../assets/meta_1763831883618.png";
+// ✅ Correct image imports (matching your assets folder)
+import metaLogo from "../../assets/meta-cert.png";
 import hackerRankLogo from "../../assets/image_1763813799198.png";
 import ibmLogo from "../../assets/image_1763813828440.png";
 
@@ -41,6 +41,8 @@ export default function Certifications() {
   return (
     <section id="certifications" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
+        
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,6 +55,7 @@ export default function Certifications() {
           <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
         </motion.div>
 
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
@@ -64,29 +67,29 @@ export default function Certifications() {
             >
               <Card className="h-full bg-card/50 border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden">
                 <CardContent className="p-6 flex flex-col h-full gap-4">
+                  
+                  {/* Logo + Date */}
                   <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <img
-                        src={cert.logo}
-                        alt={cert.issuer}
-                        className="h-12 w-auto object-contain group-hover:scale-110 transition-transform filter brightness-110"
-                      />
-                    </div>
+                    <img
+                      src={cert.logo}
+                      alt={cert.issuer}
+                      className="h-12 w-auto object-contain group-hover:scale-110 transition-transform filter brightness-110"
+                    />
                     <span className="inline-flex items-center text-xs text-muted-foreground/70 bg-muted px-2 py-1 rounded-full">
                       <Calendar className="w-3 h-3 mr-1" />
                       {cert.date}
                     </span>
                   </div>
 
+                  {/* Title + Issuer */}
                   <div className="flex-1 space-y-2">
-                    <p className="text-sm font-mono text-primary">
-                      {cert.issuer}
-                    </p>
+                    <p className="text-sm font-mono text-primary">{cert.issuer}</p>
                     <h3 className="text-lg font-bold font-display group-hover:text-primary transition-colors leading-snug">
                       {cert.title}
                     </h3>
                   </div>
 
+                  {/* Verify Button */}
                   <Button
                     variant="outline"
                     size="sm"
@@ -101,11 +104,13 @@ export default function Certifications() {
                       Verify <ExternalLink className="w-3 h-3" />
                     </a>
                   </Button>
+
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
